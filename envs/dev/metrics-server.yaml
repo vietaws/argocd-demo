@@ -1,7 +1,0 @@
-# Overrides for the upstream metrics-server chart. Everything else uses the chart defaults.
-replicas: 1
-
-resources:
-  requests:
-    cpu: 100m
-    memory: 200Mi

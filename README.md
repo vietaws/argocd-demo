@@ -19,8 +19,7 @@ argocd-demo/
 └── envs/                    # stage 4+: values per environment or service
     ├── dev/
     │   ├── values.yaml          # myapp dev: 1 replica, LOG_LEVEL=debug
-    │   ├── orders.yaml          # stage 5: new service, values only
-    │   └── metrics-server.yaml  # stage 6: overrides for an upstream chart
+    │   └── orders.yaml          # stage 5: new service, values only
     └── prod/
         └── values.yaml          # myapp prod: 3 replicas, LOG_LEVEL=info
 ```
@@ -32,7 +31,6 @@ argocd-demo/
 | `v3-helm-chart` | Helm chart, not deployed yet | none (test with `helm template`) |
 | `v4-helm-envs` | One chart, values per environment | `charts/myapp` + `envs/<env>/values.yaml` |
 | `v5-new-service` | New `orders` service from a values file | `charts/myapp` + `envs/dev/orders.yaml` |
-| `v6-third-party` | Upstream chart with override values | upstream chart + `$values/envs/dev/metrics-server.yaml` |
 
 `app/` and `app-prod/` stay on `main` as the plain-manifest baseline. After stage 4 nothing syncs them.
 
