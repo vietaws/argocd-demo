@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/vietaws/argocd-demo.git
     targetRevision: HEAD
-    path: dev
+    path: app
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
